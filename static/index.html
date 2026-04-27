@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI PDF Summarizer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI PDF Summarizer</h1>
+            <p>Upload your document and let Gemini AI extract the key insights for you.</p>
+        </header>
+
+        <main>
+            <div class="upload-area" id="upload-area">
+                <input type="file" id="file-input" accept="application/pdf" hidden>
+                <div class="upload-icon">
+                    <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="17 8 12 3 7 8"></polyline>
+                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                </div>
+                <h3>Drag & Drop your PDF here</h3>
+                <p>or</p>
+                <button class="browse-btn" id="browse-btn">Browse Files</button>
+                <p class="file-name" id="file-name"></p>
+            </div>
+
+            <div class="controls hidden" id="controls">
+                <button class="generate-btn" id="generate-btn">Generate Summary</button>
+            </div>
+
+            <div class="loading-state hidden" id="loading-state">
+                <div class="spinner"></div>
+                <p>AI is reading and summarizing your document...</p>
+            </div>
+
+            <div class="result-area hidden" id="result-area">
+                <div class="result-header">
+                    <h2>Summary</h2>
+                    <button class="reset-btn" id="reset-btn">Summarize Another</button>
+                </div>
+                <div class="summary-content" id="summary-content">
+                    <!-- Summary will be injected here -->
+                </div>
+            </div>
+            
+            <div class="error-message hidden" id="error-message">
+                <!-- Errors will be injected here -->
+            </div>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
